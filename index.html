@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101513" />
+  <link rel="icon" href="data:," />
+  <title>Estrada Morta — Crônicas do Front</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Roboto+Condensed:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="topbar">
+      <div class="brand"><div class="brand-mark">✣</div><div><span class="brand-name">ESTRADA MORTA</span><span class="brand-sub">CRÔNICAS DO FRONT · 1944</span></div></div>
+      <div class="chapter-chip"><span class="live-dot"></span><span id="chapter-label">CAPÍTULO I · A RODOVIA</span></div>
+      <div class="top-actions"><button class="icon-btn" id="map-btn" aria-label="Mapa">⌖ <span>MAPA</span></button><button class="icon-btn" id="journal-btn" aria-label="Diário">▤ <span>DIÁRIO</span></button><button class="sound-btn" id="sound-btn" aria-label="Alternar som">♫</button></div>
+    </header>
+    <section class="game-layout">
+      <div class="play-column">
+        <div class="scene-wrap" id="scene-wrap">
+          <canvas id="game" width="480" height="300" aria-label="Jogo Estrada Morta"></canvas>
+          <div class="scene-vignette"></div>
+          <div class="scene-topline"><span class="location-label"><i class="pin">⌖</i><span id="location-name">RODOVIA 9 · SETOR LESTE</span></span><span class="time-label">☾ <span id="clock">23:40</span> · NOITE</span></div>
+          <div class="interaction-hint" id="interaction-hint"><kbd>E</kbd><span>INTERAGIR</span></div>
+          <div class="center-notice" id="center-notice"></div>
+          <div class="screen-overlay hidden" id="screen-overlay"><div class="overlay-card" id="overlay-card"></div></div>
+          <div class="toast" id="toast"></div>
+          <div class="mobile-controls"><button data-move="up">▲</button><div><button data-move="left">◀</button><button data-move="down">▼</button><button data-move="right">▶</button></div><button class="mobile-action" id="mobile-action">E</button><button class="mobile-fire" id="mobile-fire">⚔</button></div>
+        </div>
+        <div class="controlbar"><div class="controls-left"><span><kbd>WASD</kbd> MOVER</span><span><kbd>ESPAÇO</kbd> ATACAR</span><span><kbd>E</kbd> INTERAGIR</span><span><kbd>Q</kbd> TROCAR ARMA</span></div><span class="control-note">EXPLORE · SOBREVIVA · SIGA EM FRENTE</span></div>
+      </div>
+      <aside class="sidebar">
+        <section class="status-card"><div class="section-heading"><span>ESTADO DO SOLDADO</span><span class="status-live">● AO VIVO</span></div><div class="soldier-row"><div class="portrait"><span>✦</span><i></i></div><div class="soldier-info"><strong>SGT. ELIAS VOSS</strong><small>7º REGIMENTO BLINDADO · ALIADO</small><div class="xp-row"><span>EXPERIÊNCIA</span><span id="xp-label">NÍVEL 1</span></div><div class="xp-track"><i id="xp-bar"></i></div></div></div><div class="vitals"><div class="vital"><div class="vital-label"><span>♥ VITALIDADE</span><b id="health-text">82 / 100</b></div><div class="meter health"><i id="health-bar"></i></div></div><div class="vital"><div class="vital-label"><span>✚ RESISTÊNCIA</span><b id="stamina-text">100 / 100</b></div><div class="meter stamina"><i id="stamina-bar"></i></div></div></div></section>
+        <section class="mission-card"><div class="section-heading"><span>MISSÃO ATUAL</span><span class="mission-id" id="mission-id">01 / 04</span></div><div class="mission-title" id="mission-title">O tanque morreu aqui</div><p id="mission-desc">Encontre combustível para o Tiger. A estrada está tomada — procure abrigo e suprimentos.</p><div class="objective" id="objective"><span class="objective-check">○</span><span>Vasculhe o posto abandonado</span></div><div class="mission-footer"><span>▣ RECOMPENSA</span><b id="mission-reward">+ 25 XP</b></div></section>
+        <section class="weapon-card"><div class="section-heading"><span>ARMAMENTO</span><span class="tiny-muted">[ Q ] ALTERNAR</span></div><div class="weapon-slots" id="weapon-slots"></div><div class="ammo-row"><span id="weapon-name">KARABINER 98K</span><b><span id="ammo-current">5</span><i>/</i><span id="ammo-total">25</span></b></div><div class="weapon-progress"><i id="ammo-bar"></i></div></section>
+        <section class="quick-inventory"><div class="section-heading"><span>MOCHILA</span><button id="inventory-btn">ABRIR <b>[ I ]</b></button></div><div class="item-grid" id="quick-items"></div></section>
+        <div class="sidebar-footer"><span>⚑ FRENTE OCIDENTAL · FRANÇA</span><span>v1.0.44</span></div>
+      </aside>
+    </section>
+    <footer class="bottom-bar"><span>⌖ <b id="coords">X: 084 · Y: 126</b></span><span class="footer-tip" id="footer-tip">“O último rádio dizia para seguir para o norte.”</span><button id="help-btn">? COMO JOGAR</button></footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
