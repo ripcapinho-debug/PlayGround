@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101513">
+  <link rel="icon" href="data:,">
+  <title>Last Light — Tiger Repair</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Last Light home"><span class="brand-mark">✦</span> FIELD NOTES <span class="brand-divider">/</span> 1944</a>
+      <div class="top-meta"><span class="signal-dot"></span> FIELD RADIO <span class="radio-state">STATIC</span></div>
+    </header>
+
+    <section class="game-wrap" aria-label="Last Light game">
+      <div class="game-head">
+        <div><p class="eyebrow">A survival vignette</p><h1>LAST <span>LIGHT</span></h1></div>
+        <div class="chapter"><span>CHAPTER 01</span><strong>THE LONG WAY BACK</strong></div>
+      </div>
+      <div class="screen-frame">
+        <canvas id="game" width="800" height="450" aria-label="Top-down pixel art game. Use WASD or arrow keys to move, E to interact."></canvas>
+        <div class="scanlines" aria-hidden="true"></div>
+        <div id="overlay" class="overlay">
+          <div class="intro-card">
+            <div class="card-kicker"><span class="tiny-star">✦</span> EASTERN FRONT · WINTER 1944</div>
+            <h2>ONE LAST<br><em>REPAIR</em></h2>
+            <p>As a German tank crewman, you are stranded beyond the village. Find four missing parts for your Tiger I, keep clear of the infected, and make it back before night closes in.</p>
+            <div class="briefing"><span>YOUR ORDERS</span><b>SCAVENGE. SURVIVE. GET HOME.</b></div>
+            <button id="startButton" class="primary-button">BEGIN THE SEARCH <span>→</span></button>
+            <div class="key-note">WASD / ARROWS TO MOVE <i>·</i> E TO SEARCH <i>·</i> SHIFT TO SPRINT</div>
+          </div>
+        </div>
+        <div id="endPanel" class="end-panel hidden" aria-live="polite">
+          <div class="end-kicker">FIELD REPORT <span>— 1944</span></div>
+          <h2 id="endTitle">MISSION COMPLETE</h2>
+          <p id="endText"></p>
+          <button id="restartButton" class="primary-button">PLAY AGAIN <span>↻</span></button>
+        </div>
+        <div class="screen-vignette"></div>
+      </div>
+      <div class="hud">
+        <div class="hud-block objective"><span class="hud-label">OBJECTIVE</span><strong id="objectiveText">Find the tank parts</strong><small id="objectiveSub">0 / 4 recovered</small></div>
+        <div class="hud-block health"><span class="hud-label">CONDITION</span><div id="hearts" class="hearts" aria-label="Health"></div></div>
+        <div class="hud-block time"><span class="hud-label">DUSK IN</span><strong id="timer">04:00</strong></div>
+        <div class="hud-block controls"><span class="hud-label">FIELD GUIDE</span><span><kbd>WASD</kbd> MOVE <kbd>E</kbd> SEARCH</span></div>
+      </div>
+      <div id="message" class="message" aria-live="polite"></div>
+    </section>
+
+    <footer class="footnote"><span>AN ORIGINAL PIXEL-ART SURVIVAL GAME</span><span>NO GLORY IN WAR. JUST A WAY HOME.</span></footer>
+  </main>
+  <div class="touch-controls" aria-label="Touch controls">
+    <div class="dpad">
+      <button data-dir="up" aria-label="Move up">▲</button>
+      <div><button data-dir="left" aria-label="Move left">◀</button><button data-dir="down" aria-label="Move down">▼</button><button data-dir="right" aria-label="Move right">▶</button></div>
+    </div>
+    <button id="touchInteract" class="touch-action">SEARCH</button>
+  </div>
+  <script src="game.js"></script>
+</body>
+</html>

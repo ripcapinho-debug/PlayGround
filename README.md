@@ -1,5 +1,14 @@
 # PlayGround
 
+## Last Light — Tiger Repair
+
+A small, original pixel-art survival game set in a fictional Eastern Front village in winter 1944. Play as a German tank crewman searching for four parts to repair a stranded Tiger I while avoiding the infected. The story is framed as survival, not a celebration of war.
+
+- **Move:** WASD, arrow keys, or the on-screen D-pad
+- **Sprint:** Shift
+- **Search / repair:** Hold E (or the on-screen Search button) near your tank
+- **Goal:** Recover all four parts, return to the tank, and hold the repair control until it starts
+
 <!-- omgithub:readme:start -->
 ## 🚀 Build, play, and remix with OMGithub
 
