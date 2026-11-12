@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="theme-color" content="#101513" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <title>Cinzas de 1986 — Uma história de sobrevivência</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script type="importmap">{"imports":{"three":"https://unpkg.com/three@0.160.0/build/three.module.js"}}</script>
+</head>
+<body>
+  <div id="game"></div>
+  <div class="filmgrain"></div><div class="vignette"></div>
+  <div id="title-screen" class="screen visible">
+    <div class="title-wrap">
+      <div class="eyebrow"><span class="dot"></span> ARQUIVO DE CAMPO · 1986 · ZONA DE EXCLUSÃO</div>
+      <h1>CINZAS<br><i>DE 1986</i></h1>
+      <div class="title-rule"><span></span><b>EST. 04:17 — SINAL PERDIDO</b></div>
+      <p class="intro">A Guerra Fria terminou. A paz nunca chegou.<br>Encontre sua irmã. Atravesse a zona. Não confie no rádio.</p>
+      <button id="start-button" class="primary-button">INICIAR JORNADA <span>↗</span></button>
+      <div class="title-foot"><span>UMA HISTÓRIA DE SOBREVIVÊNCIA</span><span>CAPÍTULO I — A ESTRADA VAZIA</span></div>
+    </div>
+    <div class="title-side">N 51°23' · E 30°06'<br>RELATÓRIO 09 / NÃO CLASSIFICADO</div>
+  </div>
+  <div id="chapter-card" class="chapter-card"><div class="chapter-kicker">CAPÍTULO <span id="chapter-number">I</span></div><h2 id="chapter-title">A ESTRADA VAZIA</h2><p id="chapter-subtitle">O silêncio também deixa rastros.</p></div>
+  <div id="hud" class="hud hidden">
+    <div class="hud-top"><div class="location"><span class="loc-icon">⌖</span><div><small>SETOR ATUAL</small><b id="location-name">ESTRADA NORTE</b></div></div><div class="chapter-pill">CAPÍTULO <span id="hud-chapter">I</span><span class="pill-divider"></span><span id="clock">04:17</span></div><button id="pause-button" aria-label="Pausar">Ⅱ</button></div>
+    <div class="mission"><div class="mission-mark">◇</div><div><small>OBJETIVO PRINCIPAL</small><b id="objective">Encontre a origem do sinal</b></div><div class="objective-count" id="objective-count">0 / 3</div></div>
+    <div id="boss-panel" class="boss-panel"><div><span>ALVO PRIORITÁRIO</span><b>O GUARDIÃO</b></div><div class="boss-track"><i id="boss-bar"></i></div></div>
+    <div class="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div class="hitmarker" id="hitmarker">✣</div>
+    <div class="bottom-hud"><div class="vitals"><div class="vital-label"><span>INTEGRIDADE</span><b id="health-value">100</b></div><div class="health-track"><span id="health-bar"></span></div><div class="status-line"><span class="status-dot"></span>ESTÁVEL</div></div>
+      <div class="weapon-panel"><div class="weapon-name"><span id="weapon-label">COLT PYTHON</span><small id="weapon-mode">SEMIAUTOMÁTICA</small></div><div class="ammo"><strong id="ammo-current">6</strong><span>/</span><small id="ammo-reserve">36</small></div><div class="weapon-switch"><span class="selected">1 <i>PYTHON</i></span><span>2 <i>MP5</i></span></div></div></div>
+    <div id="prompt" class="prompt"></div>
+    <div class="radio-caption" id="radio-caption"><span>◖ RÁDIO · 104.7</span><b id="radio-text"></b></div>
+    <div id="damage-flash" class="damage-flash"></div>
+  </div>
+  <div id="pause-screen" class="screen"><div class="modal-card"><div class="eyebrow">PAUSA · SETOR <span id="pause-sector">01</span></div><h2>O mundo<br><i>espera.</i></h2><p>WASD mover · Mouse olhar · Clique atirar<br>1 / 2 trocar arma · R recarregar · E interagir<br>Shift correr · Esc pausar</p><button id="resume-button" class="primary-button">VOLTAR À ESTRADA <span>↗</span></button><button id="restart-button" class="text-button">RECOMEÇAR JORNADA</button></div></div>
+  <div id="end-screen" class="screen"><div class="modal-card ending"><div class="eyebrow">ARQUIVO DE CAMPO · FIM DA TRANSMISSÃO</div><h2 id="ending-title">AINDA<br><i>HÁ AMANHÃ.</i></h2><p id="ending-copy">A estrada continua. Mas, pela primeira vez, você não está sozinho.</p><button id="again-button" class="primary-button">JOGAR NOVAMENTE <span>↗</span></button></div></div>
+  <div class="controls-hint"><span>WASD</span> MOVER <i></i><span>CLIQUE</span> MIRAR / ATIRAR <i></i><span>E</span> INTERAGIR</div>
+  <div class="touch-controls"><div class="touch-stick" id="touch-stick"><span></span></div><div class="touch-actions"><button id="touch-fire">ATIRAR</button><button id="touch-use">USAR</button><button id="touch-switch">TROCAR</button></div></div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
