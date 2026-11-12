@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#101a27" />
+  <title>Entre Andares — uma experiência memorial</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Entre Andares, início"><span class="brand-mark">▦</span><span>ENTRE <b>ANDARES</b></span></a>
+      <span class="top-note">UMA EXPERIÊNCIA MEMORIAL · 11 DE SETEMBRO DE 2001</span>
+      <button class="sound-toggle" id="soundToggle" type="button" aria-label="Ativar ou desativar som">SOM <span id="soundState">OFF</span></button>
+    </header>
+
+    <section class="game-frame" aria-label="Jogo Entre Andares">
+      <canvas id="game" width="480" height="270" aria-label="Jogo de plataforma pixel art"></canvas>
+      <div class="scanlines" aria-hidden="true"></div>
+      <section class="screen-panel" id="titlePanel">
+        <div class="eyebrow"><i></i> NOVA YORK · 08:46</div>
+        <h1>Entre<br /><span>Andares</span></h1>
+        <p class="lead">Uma jornada curta sobre encontrar o caminho, ajudar quem está por perto e chegar a um lugar seguro.</p>
+        <button class="primary-button" id="startButton">COMEÇAR <span>→</span></button>
+        <p class="disclaimer">Uma obra ficcional e não gráfica, criada em memória das vidas perdidas e das pessoas que ajudaram naquele dia.</p>
+      </section>
+      <section class="screen-panel hidden" id="pausePanel">
+        <div class="eyebrow"><i></i> PAUSADO</div>
+        <h2>Respire.<br /><span>Você está seguro.</span></h2>
+        <button class="primary-button" id="resumeButton">CONTINUAR <span>→</span></button>
+      </section>
+      <div class="game-hud hidden" id="hud">
+        <div class="hud-left"><span class="hud-label">ROTA DE EVACUAÇÃO</span><strong id="floorLabel">ANDAR 05 / 05</strong></div>
+        <div class="progress-wrap"><div id="progressFill"></div></div>
+        <div class="hud-right"><span class="hud-label">PRÓXIMO</span><strong id="objectiveLabel">ESCADA LESTE</strong></div>
+        <button id="pauseButton" class="pause-button" aria-label="Pausar">Ⅱ</button>
+      </div>
+      <div class="toast hidden" id="toast"></div>
+      <div class="touch-controls" id="touchControls" aria-label="Controles de toque">
+        <button data-control="left" aria-label="Mover para a esquerda">◀</button>
+        <button data-control="right" aria-label="Mover para a direita">▶</button>
+        <button data-control="jump" aria-label="Pular">↑</button>
+      </div>
+      <div class="transition-caption hidden" id="transitionCaption"></div>
+    </section>
+
+    <footer class="below">
+      <div class="controls-copy"><span class="keycap">←</span><span class="keycap">→</span> MOVER <span class="keycap">ESPAÇO</span> PULAR <span class="keycap">P</span> PAUSAR</div>
+      <div class="foot-right"><span class="status-dot"></span> UM JOGO SOBRE RESILIÊNCIA E MEMÓRIA</div>
+    </footer>
+  </main>
+  <script src="game.js"></script>
+</body>
+</html>
