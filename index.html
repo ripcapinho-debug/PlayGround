@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="theme-color" content="#101510" />
+  <title>Operação Eisensturm — Sobreviva</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="game"></div>
+  <div class="grain"></div>
+  <div class="vignette"></div>
+  <div id="hud" class="hidden">
+    <div class="topline"><div class="mission-tag"><i></i> OPERAÇÃO EISENSTURM <span>• SETOR 04</span></div><div class="survival"><small>TEMPO DE SOBREVIVÊNCIA</small><strong id="timer">05:00</strong></div><div class="weather"><span class="weather-icon">☁</span> CHUVA FRACA <b>08°C</b></div></div>
+    <div class="objective"><span class="objective-mark">✳</span><div><small>OBJETIVO PRINCIPAL</small><strong id="objective">RESISTA ATÉ A EXTRAÇÃO</strong></div></div>
+    <div id="notice" class="notice"></div>
+    <div class="crosshair"><i></i><i></i><i></i><i></i><b></b></div>
+    <div id="hurt" class="hurt"></div>
+    <div id="hitmarker" class="hitmarker">×</div>
+    <div class="bottom-hud">
+      <div class="vitals"><div class="vital-head"><span>CONDIÇÃO FÍSICA</span><b id="healthNum">100</b></div><div class="health-track"><i id="healthBar"></i></div><div class="status-row"><span id="statusText">ESTÁVEL</span><span class="stamina"><b id="staminaBar"></b></span><small>FÔLEGO</small></div></div>
+      <div class="center-hints"><span><kbd>W A S D</kbd> MOVER</span><span><kbd>SHIFT</kbd> CORRER</span><span><kbd>CTRL</kbd> AGACHAR</span></div>
+      <div class="weapon-panel"><div class="weapon-meta"><span id="weaponType">FUZIL DE FERROLHO</span><span id="weaponSlot">01 / 04</span></div><div class="weapon-name" id="weaponName">KAR98K</div><div class="ammo-row"><strong id="ammo">5 <small>/ 30</small></strong><div class="ammo-state"><span id="ammoState">PRONTO</span><div id="ammoPips"></div></div></div><div class="weapon-controls"><span><kbd>R</kbd> RECARREGAR</span><span><kbd>1—4</kbd> TROCAR</span><span><kbd>E</kbd> INTERAGIR</span></div></div>
+    </div>
+    <div id="interaction" class="interaction"><kbd>E</kbd><span>PEGAR SUPRIMENTOS</span></div>
+    <div class="killfeed" id="killfeed"></div>
+    <div id="mobileControls" class="mobile-controls"><div class="stick" id="moveStick"><span></span></div><div class="touch-actions"><button id="touchAim">MIRAR</button><button id="touchReload">RECARREGAR</button><button id="touchFire">ATIRAR</button></div></div>
+  </div>
+  <section id="intro" class="screen intro-screen">
+    <div class="intro-top"><div class="classified"><span>▲</span> ARQUIVO DE CAMPO / 1944</div><div class="intro-coord">FRANÇA OCUPADA <b>49° 18' N / 06° 12' E</b></div></div>
+    <div class="intro-copy"><div class="overline"><span></span> RELATÓRIO DE COMBATE • 17 OUTUBRO 1944</div><h1>OPERAÇÃO<br><em>EISENSTURM</em></h1><p>O posto avançado caiu. O rádio silenciou.<br>O que restou da guarnição não está mais entre os vivos.</p><div class="radio-line"><div class="radio-icon">◉</div><div><small>TRANSMISSÃO INTERCEPTADA · 22:41</small><strong id="radioText">“Hier spricht das Oberkommando… Wir haben die Stellung verloren…”</strong></div></div><div class="intro-bottom"><button id="startButton">INICIAR OPERAÇÃO <span>→</span></button><div class="briefing"><span>MISSÃO</span><b>SOBREVIVA POR 5 MINUTOS</b><span>TECLADO + MOUSE · CLIQUE PARA TRAVAR A MIRA</span></div></div></div>
+    <div class="intro-stamp">GEHEIM<br><small>TOP SECRET</small></div>
+  </section>
+  <section id="pauseScreen" class="screen modal hidden"><div class="modal-card"><span class="overline">OPERAÇÃO EISENSTURM</span><h2>PAUSADO</h2><p>A posição ainda resiste.</p><button id="resumeButton">RETOMAR MISSÃO <span>→</span></button><small>ESC PARA VOLTAR AO JOGO</small></div></section>
+  <section id="endScreen" class="screen modal hidden"><div class="modal-card"><span class="overline" id="endOverline">RELATÓRIO FINAL</span><h2 id="endTitle">OPERAÇÃO<br>FRACASSADA</h2><p id="endSub">A posição foi perdida.</p><div id="stats" class="stats-grid"></div><button id="restartButton">REINICIAR OPERAÇÃO <span>↻</span></button></div></section>
+  <div id="loading" class="loading"><span class="loading-mark">E</span><span>CARREGANDO TEATRO DE OPERAÇÕES</span><i></i></div>
+  <script type="module" src="game.js"></script>
+</body>
+</html>
